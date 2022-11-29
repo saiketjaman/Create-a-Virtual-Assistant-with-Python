@@ -44,22 +44,28 @@ In case any error pops up install this -
 ### For mac (arm) users
 The latest version of MacOS (Ventura) has few issues about pyttsx3 and pyAudio. In order to run this program on Mac successfully, you might need to execute these following commands:
 To fix pyttsx3 in Ventura:
-`python -c 'import inspect; from pyttsx3.drivers.nsss import NSSpeechDriver; print(inspect.getsourcefile(NSSpeechDriver))'`
-
+```
+python -c 'import inspect; from pyttsx3.drivers.nsss import NSSpeechDriver; print(inspect.getsourcefile(NSSpeechDriver))'
+```
 It should prints something like this:
-`/Users/myuser/virtualenvs/myvenv/lib/python3.10/site-packages/pyttsx3/drivers/nsss.py`
-
+```
+/Users/myuser/virtualenvs/myvenv/lib/python3.10/site-packages/pyttsx3/drivers/nsss.py
+```
 Use your text editor to find & remove `attr['VoiceAge']`. This should do the trick.
 
 Move on to pyAudio part. 
 Manually install pyAudio first:
-`git clone https://github.com/PortAudio/portaudio.git`
-`cd portaudio`
-`./configure && make`
-`sudo make install`
-`sudo cp include/pa_mac_core.h /usr/local/include`
+
+```
+git clone https://github.com/PortAudio/portaudio.git
+cd portaudio
+./configure && make
+sudo make install
+sudo cp include/pa_mac_core.h /usr/local/include
+```
 
 Then
-`pip install pyAudio`
-
+```
+pip install pyAudio
+```
 Should works fine.
