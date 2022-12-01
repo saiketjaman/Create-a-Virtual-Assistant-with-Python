@@ -54,7 +54,7 @@ It should prints something like this:
 Use your text editor to find & remove `attr['VoiceAge']`. This should do the trick.
 
 Move on to pyAudio part. 
-Manually install pyAudio first:
+Manually install portaudio first:
 
 ```
 git clone https://github.com/PortAudio/portaudio.git
